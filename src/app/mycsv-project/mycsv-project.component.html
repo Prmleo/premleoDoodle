@@ -1,0 +1,33 @@
+<form [formGroup]="myFormObject">
+<div id="usrdata">
+  Email:<input class="form-control" formControlName="userMail" placeholder="premleojesus@gmail.com" type="email"/>
+  <br>
+  Address:<input  class="form-control" formControlName="userAddr"type="text"/>
+  <br>
+  FirstName:<input class="form-control" formControlName="frstName" type="text"/>
+  <br>
+  LastName:<input class="form-control"formControlName="lstName" type="text"/>
+  <br>
+  Hobbies:<input class="form-control"formControlName="Hbby" type="text"/>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-info">Register</button>
+</div>
+<br><br>
+<br>
+<font color="blue" size="5">This data from database(csv file)</font>
+<div *ngIf="userMail.hasError('noEmpty')&&userAddr.touched&&frstName.touched&&lstName.touched&&Hbby.touched">
+<p *ngFor="let usr of users">{{usr.User_Data}}</p>
+</div>
+<br>
+<div *ngIf="!userMail.hasError('noEmpty')&&!(userAddr.touched)&&!(frstName.touched)&&!(lstName.touched)&&!(Hbby.touched)">
+  
+  <p><font color="red">please use this mail id:premleojesus@gmail.com. And fill all the details</font></p>
+  </div>
+  <br>
+  
+</form>
+
+
