@@ -4,7 +4,8 @@ import{MycsvProjectComponent}from './mycsv-project.component';
 import{User}from '../Model/data.model';
 import{UserService}from '../service/data.service';
 @Component({
-    selector: 'app-mail'
+    selector: 'app-mail',
+   template:"this is Premleo"
 })
 //@Input() cust:Customer;
 export class MailValidation
